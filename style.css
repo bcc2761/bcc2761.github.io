@@ -1,37 +1,220 @@
+/* Color Palette */
+:root {
+    --dark-green: #2F4F4F; /* Deep Forest Green */
+    --light-green: #5F9EA0; /* Cadet Blue (a lighter, cooler green/blue) */
+    --beige: #F5F5DC;      /* Beige */
+    --off-white: #F8F8F8;   /* Near white for text/accents on dark */
+    --text-dark: #333333;   /* Dark text on light backgrounds */
+}
+
+/* General Body Styles */
 body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif; /* A clean, modern sans-serif font */
+    margin: 0;
+    padding: 0;
+    background-color: var(--beige); /* Light background */
+    color: var(--text-dark);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-header {
-  background: #333;
-  color: #fff;
-  padding: 2rem 1rem;
-  text-align: center;
+/* Base Container for content sections */
+.container {
+    max-width: 900px; /* Slightly wider for a more open feel */
+    margin: 60px auto; /* More vertical space between sections */
+    padding: 40px;
+    background-color: var(--off-white);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Softer shadow */
+    border-radius: 10px; /* Slightly more rounded corners */
 }
 
-nav a {
-  margin: 0 1rem;
-  color: #fff;
-  text-decoration: none;
+/* Hero Header Section */
+.hero {
+    background-color: var(--dark-green);
+    color: var(--off-white);
+    text-align: center;
+    padding: 120px 20px; /* More padding */
 }
 
-section {
-  padding: 2rem 1rem;
-  max-width: 800px;
-  margin: auto;
-  background: white;
-  margin-bottom: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.hero-text h1 {
+    font-family: 'Playfair Display', serif; /* A more elegant serif for name */
+    font-size: 3.8em; /* Larger, more impactful name */
+    margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
+.hero-text p {
+    font-size: 1.4em; /* Slightly larger tagline */
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 40px; /* Space before button */
+    color: rgba(248, 248, 248, 0.9); /* Slightly desaturated for contrast */
+}
+
+/* General Button Style */
+.button {
+    display: inline-block;
+    background-color: var(--light-green);
+    color: var(--off-white);
+    padding: 14px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+    background-color: var(--dark-green);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Section Headings */
+h2 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    color: var(--dark-green);
+    margin-bottom: 40px; /* More space below heading */
+    font-size: 2.5em;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after { /* Underline effect */
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px; /* Shorter, elegant underline */
+    height: 3px;
+    background-color: var(--light-green);
+    border-radius: 2px;
+}
+
+/* About Me Section */
+#about p {
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+
+/* Projects Section */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* More space between project cards */
+    text-align: left;
+}
+
+.project-card {
+    background: var(--beige); /* Use beige for card background */
+    border: 1px solid rgba(var(--dark-green), 0.1); /* Subtle border */
+    padding: 25px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Lighter shadow for cards */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); /* More pronounced on hover */
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: var(--dark-green);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    font-size: 0.95em;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: var(--dark-green); /* Link color matches theme */
+    border: 1px solid var(--dark-green);
+    padding: 8px 18px;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-card a:hover {
+    background-color: var(--dark-green);
+    color: var(--off-white);
+}
+
+/* Contact Section */
+#contact p {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+/* Footer */
 footer {
-  text-align: center;
-  padding: 1rem;
-  background: #222;
-  color: #aaa;
+    text-align: center;
+    padding: 30px;
+    background-color: var(--dark-green);
+    color: var(--off-white);
+    font-size: 0.9em;
+    margin-top: 80px; /* More space above footer */
+}
+
+footer a {
+    color: var(--light-green); /* Link color */
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin: 40px auto;
+        padding: 30px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.8em;
+    }
+
+    .hero-text p {
+        font-size: 1.1em;
+    }
+
+    h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr; /* Stack projects vertically on small screens */
+    }
+
+    .project-card {
+        padding: 20px;
+    }
 }
